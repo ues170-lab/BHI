@@ -1,0 +1,319 @@
+/* Broken Halo Institute for Recovery Practice
+   Design system: quiet clinical field-manual — the visual register of the
+   Institute's own doctrine documents (locked labels, boxed boundaries,
+   version stamps) — not the streetwear brand's cyan/pink/black system. */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --paper:      #F0ECE3;
+  --paper-deep: #E4DECE;
+  --ink:        #1C1B18;
+  --ink-soft:   #55524A;
+  --ink-faint:  #8B8677;
+  --evergreen:  #2E5C4C;
+  --evergreen-deep: #1F4136;
+  --stamp:      #8B3B2B;
+  --rule:       #CBC2AC;
+  --focus:      #1F4136;
+
+  --display: 'Space Grotesk', system-ui, sans-serif;
+  --body:    'Source Serif 4', Georgia, serif;
+  --mono:    'IBM Plex Mono', ui-monospace, monospace;
+
+  --max: 720px;
+}
+
+*{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:18px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+}
+
+a{ color:var(--evergreen-deep); text-decoration-thickness:1px; text-underline-offset:3px; }
+a:hover{ color:var(--stamp); }
+a:focus-visible, button:focus-visible{
+  outline:2px solid var(--focus);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+img{ max-width:100%; display:block; }
+
+/* ---------- layout shells ---------- */
+
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 24px;
+}
+
+header.site{
+  border-bottom:1px solid var(--rule);
+  padding:22px 0;
+}
+header.site .wrap{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.wordmark{
+  font-family:var(--mono);
+  font-size:13px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:500;
+}
+.wordmark span{ color:var(--ink-faint); }
+
+nav.site ul{
+  list-style:none;
+  display:flex;
+  gap:22px;
+  margin:0; padding:0;
+  font-family:var(--mono);
+  font-size:13px;
+  letter-spacing:0.03em;
+}
+nav.site a{
+  color:var(--ink-soft);
+  text-decoration:none;
+  padding-bottom:2px;
+  border-bottom:1px solid transparent;
+}
+nav.site a:hover, nav.site a[aria-current="page"]{
+  color:var(--ink);
+  border-bottom-color:var(--evergreen);
+}
+
+main{ padding:56px 0 40px; }
+
+footer.site{
+  border-top:1px solid var(--rule);
+  margin-top:64px;
+  padding:32px 0 40px;
+}
+footer.site .wrap{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.boundary-line{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.boundary-line strong{ color:var(--stamp); font-weight:500; }
+.footer-meta{
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--ink-faint);
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.footer-meta a{ color:var(--ink-faint); }
+
+/* ---------- eyebrow / field-label system ----------
+   Every doctrine doc this site is built from labels its sections
+   (SCOPE, POSITIONING, BOUNDARY). That labeling habit is the site's
+   one recurring structural device — not decoration, a documented fact
+   about how this material is actually written. */
+
+.field-label{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--evergreen-deep);
+  border:1px solid var(--evergreen-deep);
+  padding:3px 9px;
+  border-radius:2px;
+  margin-bottom:18px;
+}
+
+/* ---------- hero ---------- */
+
+.hero{
+  padding-bottom:8px;
+  animation:rise 0.5s ease-out both;
+}
+@keyframes rise{
+  from{ opacity:0; transform:translateY(8px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+h1{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(2.1rem, 5vw, 3.1rem);
+  line-height:1.08;
+  letter-spacing:-0.01em;
+  margin:0 0 20px;
+  max-width:14ch;
+}
+.lede{
+  font-family:var(--body);
+  font-size:1.28rem;
+  color:var(--ink-soft);
+  max-width:42ch;
+  margin:0 0 8px;
+}
+
+/* ---------- stamp ---------- */
+
+.stamp{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1.5px solid var(--stamp);
+  color:var(--stamp);
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  padding:9px 14px;
+  border-radius:3px;
+  transform:rotate(-1deg);
+  margin:36px 0 4px;
+}
+.stamp::before{ content:"◆"; font-size:9px; }
+
+/* ---------- what-this-is grid ---------- */
+
+.definer{
+  margin-top:48px;
+  display:grid;
+  gap:22px;
+  border-top:1px solid var(--rule);
+  padding-top:32px;
+}
+.definer h2{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  margin:0 0 6px;
+  font-weight:500;
+}
+.definer p{ margin:0; color:var(--ink); }
+.definer-row{ display:grid; grid-template-columns:1fr; gap:22px; }
+@media (min-width:640px){
+  .definer-row{ grid-template-columns:1fr 1fr; }
+}
+
+/* ---------- prose ---------- */
+
+.prose h2{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:1.5rem;
+  margin:44px 0 14px;
+  letter-spacing:-0.01em;
+}
+.prose h2:first-child{ margin-top:0; }
+.prose p{ margin:0 0 18px; }
+.prose p.lede{ font-size:1.15rem; }
+
+/* ---------- boundary panel (the signature callout box) ---------- */
+
+.panel{
+  background:var(--paper-deep);
+  border-left:3px solid var(--evergreen-deep);
+  padding:20px 22px;
+  margin:32px 0;
+  border-radius:2px;
+}
+.panel.warn{ border-left-color:var(--stamp); }
+.panel .field-label{ margin-bottom:10px; }
+.panel p{ margin:0; color:var(--ink); }
+.panel p + p{ margin-top:10px; }
+
+/* ---------- simple lists ---------- */
+
+ul.plain{ padding-left:1.1em; margin:0 0 18px; }
+ul.plain li{ margin-bottom:8px; }
+
+/* ---------- cards (book / offer pathways) ---------- */
+
+.card{
+  border:1px solid var(--rule);
+  border-radius:4px;
+  padding:24px;
+  margin:24px 0;
+  background:#fff8;
+}
+.card h3{
+  font-family:var(--display);
+  font-size:1.1rem;
+  margin:0 0 8px;
+}
+.card p{ margin:0 0 14px; color:var(--ink-soft); }
+
+.btn{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:13px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--paper);
+  background:var(--evergreen-deep);
+  padding:11px 18px;
+  border-radius:3px;
+  text-decoration:none;
+  border:1px solid var(--evergreen-deep);
+}
+.btn:hover{ background:var(--stamp); border-color:var(--stamp); color:var(--paper); }
+.btn.ghost{
+  background:transparent;
+  color:var(--evergreen-deep);
+}
+.btn.ghost:hover{ color:var(--stamp); border-color:var(--stamp); background:transparent; }
+
+/* ---------- contact ---------- */
+
+.contact-block{
+  margin-top:12px;
+  padding:26px;
+  border:1px solid var(--rule);
+  border-radius:4px;
+  background:var(--paper-deep);
+}
+.contact-block .email{
+  font-family:var(--mono);
+  font-size:1.05rem;
+  color:var(--evergreen-deep);
+  word-break:break-all;
+}
+
+/* ---------- credential line ---------- */
+
+.credential{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  margin-top:6px;
+}
