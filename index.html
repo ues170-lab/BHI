@@ -59,6 +59,12 @@
     .card{padding:var(--space-6)}
     .card h2{font-size:var(--text-xl);margin-bottom:var(--space-3)}
     .book-box{display:grid;gap:var(--space-4);padding:var(--space-6);border-radius:var(--radius-xl);background:linear-gradient(180deg,var(--color-surface) 0%,var(--color-surface-2) 100%);border:1px solid rgba(91,84,75,.14);box-shadow:var(--shadow-sm)}
+    .book-feature{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:var(--space-8);align-items:center}
+    .book-cover{display:block;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--color-border);box-shadow:var(--shadow-lg);transition:transform var(--transition-interactive)}
+    .book-cover:hover{transform:translateY(-2px)}
+    .book-cover img{width:100%;aspect-ratio:2/3;object-fit:cover}
+    .book-copy{display:grid;gap:var(--space-4)}
+    .book-copy p{color:var(--color-text-muted)}
     .resource-box{display:grid;gap:var(--space-4);padding:var(--space-6);border-radius:var(--radius-xl);background:linear-gradient(180deg,var(--color-surface) 0%,var(--color-surface-2) 100%);border:1px solid rgba(91,84,75,.14);box-shadow:var(--shadow-sm)}
     .meta{display:flex;flex-wrap:wrap;gap:var(--space-3);font-size:var(--text-sm);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-faint)}
     .actions{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-5)}
@@ -69,7 +75,7 @@
     .boundary p{font-size:var(--text-lg);max-width:58ch}
     footer{padding:var(--space-8) 0 var(--space-10);border-top:1px solid var(--color-divider)}
     .footer-inner{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;color:var(--color-text-faint);font-size:var(--text-sm)}
-    @media (max-width:900px){.hero-grid,.grid{grid-template-columns:1fr} nav{display:none}}
+    @media (max-width:900px){.hero-grid,.grid,.book-feature{grid-template-columns:1fr} nav{display:none}.book-cover{max-width:260px}}
     @media (max-width:560px){.actions{flex-direction:column}.btn{width:100%}}
     @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
   </style>
@@ -92,7 +98,7 @@
         <a href="#philosophy">Philosophy</a>
         <a href="#about">About</a>
         <a href="#book">Book</a>
-        <a href="resources.html">Resources</a>
+        <a href="#resources">Resources</a>
         <a href="#contact">Contact</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
@@ -158,25 +164,33 @@
         <h2>The foundation text</h2>
       </div>
       <div class="book-box">
-        <p><strong>Broken But Breathing</strong> is the memoir underneath the model. It supplies the lived-experience spine behind the Institute's language about addiction, incarceration, trauma, relapse, and the identities people build to survive.</p>
-        <div class="meta"><span>Paperback + Kindle</span><span>ISBN 979-8-2579-5965-3</span></div>
-        <div class="actions">
-          <a class="btn primary" href="https://www.amazon.com/dp/B0H9G1YHS" target="_blank" rel="noopener noreferrer">Get the book</a>
-          <a class="btn secondary" href="https://www.brokenhaloco.com/" target="_blank" rel="noopener noreferrer">Broken Halo Co.</a>
+        <div class="book-feature">
+          <a class="book-cover" href="https://www.amazon.com/dp/B0H9G1YHST" target="_blank" rel="noopener noreferrer" aria-label="Buy Broken But Breathing on Amazon">
+            <img src="https://thebrokenhaloco.com/book-cover-front.webp?v=20260723" alt="Broken But Breathing book cover by Eric Lee Sanders" loading="lazy">
+          </a>
+          <div class="book-copy">
+            <p><strong>Broken But Breathing</strong> is the memoir underneath the model. It supplies the lived-experience spine behind the Institute's language about addiction, incarceration, trauma, relapse, and the identities people build to survive.</p>
+            <div class="meta"><span>Paperback + Kindle</span><span>ISBN 979-8-2579-5965-3</span></div>
+            <div class="actions">
+              <a class="btn primary" href="https://www.amazon.com/dp/B0H9G1YHST" target="_blank" rel="noopener noreferrer">Buy paperback on Amazon</a>
+              <a class="btn secondary" href="book.html">Read about the book</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section container">
+    <section class="section container" id="resources">
       <div class="section-head">
-        <span class="eyebrow">Resources</span>
+        <span class="eyebrow">Institute / Resources</span>
         <h2>Practical tools for your work</h2>
       </div>
       <div class="resource-box">
-        <p><strong>Guilt & Shame Processing Worksheet</strong> — A structured tool for identity-centered processing of guilt and shame dynamics in recovery practice. Designed for individual or group work.</p>
-        <div class="meta"><span>PDF</span><span>Printable</span></div>
+        <p><strong>Guilt & Shame Processing Worksheet</strong> — Guilt tells you what you did. Shame tells you who you think you are. This five-page printable tool helps separate facts from the shame story, identify accountability without identity collapse, and choose a next repair action.</p>
+        <div class="meta"><span>5-page PDF</span><span>Printable</span><span>No email gate</span></div>
         <div class="actions">
-          <a class="btn primary" href="resources.html">View all resources</a>
+          <a class="btn primary" href="Broken_Halo_Guilt_and_Shame_Worksheet.pdf" download>Download worksheet</a>
+          <a class="btn secondary" href="resources.html">View all resources</a>
         </div>
       </div>
     </section>
