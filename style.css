@@ -21,12 +21,30 @@
   --body:    'Source Serif 4', Georgia, serif;
   --mono:    'IBM Plex Mono', ui-monospace, monospace;
 
+  --card-bg: rgba(255,255,255,0.45);
   --max: 720px;
+}
+
+/* Dark mode — same field-manual identity, inverted. Evergreen and stamp
+   both brighten so they still hit contrast on a dark ground; nothing
+   about the structure or the labeling system changes, only the palette. */
+[data-theme="dark"]{
+  --paper:      #17140F;
+  --paper-deep: #211C15;
+  --ink:        #EDE7D9;
+  --ink-soft:   #C3BBAA;
+  --ink-faint:  #8C8474;
+  --evergreen:  #6FA98F;
+  --evergreen-deep: #8FC3AA;
+  --stamp:      #D98A6C;
+  --rule:       #352E23;
+  --focus:      #8FC3AA;
+  --card-bg: rgba(255,255,255,0.04);
 }
 
 *{ box-sizing:border-box; }
 
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; color-scheme:light dark; }
 
 body{
   margin:0;
@@ -36,6 +54,7 @@ body{
   font-size:18px;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
+  transition:background 180ms ease, color 180ms ease;
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -67,9 +86,15 @@ header.site{
 }
 header.site .wrap{
   display:flex;
-  align-items:baseline;
+  align-items:center;
   justify-content:space-between;
   gap:16px;
+  flex-wrap:wrap;
+}
+.nav-group{
+  display:flex;
+  align-items:center;
+  gap:22px;
   flex-wrap:wrap;
 }
 .wordmark{
@@ -101,6 +126,26 @@ nav.site a{
 nav.site a:hover, nav.site a[aria-current="page"]{
   color:var(--ink);
   border-bottom-color:var(--evergreen);
+}
+
+.theme-toggle{
+  width:34px;
+  height:34px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--rule);
+  background:transparent;
+  color:var(--ink-soft);
+  border-radius:3px;
+  cursor:pointer;
+  padding:0;
+  transition:border-color 150ms ease, color 150ms ease;
+}
+.theme-toggle svg{ width:16px; height:16px; }
+.theme-toggle:hover{
+  border-color:var(--evergreen-deep);
+  color:var(--evergreen-deep);
 }
 
 main{ padding:56px 0 40px; }
@@ -262,7 +307,7 @@ ul.plain li{ margin-bottom:8px; }
   border-radius:4px;
   padding:24px;
   margin:24px 0;
-  background:#fff8;
+  background:var(--card-bg);
 }
 .card h3{
   font-family:var(--display);
