@@ -43,10 +43,14 @@ This is a simple sequence, not a before-and-after. Agency sits in the middle. Ev
 5. **Practice** — Daily evidence generators.
 6. **New Evidence** — What replaces the old story.
 
-## Website-ready summary
+## Work With Broken Halo
 
-This *Broken But Breathing* handout is built around one core truth: your past may explain parts of you, but it does not get final authority over you. Identity work is not about romanticizing damage, denying pain, or pretending labels never shaped you. It is about naming the identity you inherited or built to survive, understanding what it protected, and choosing what kind of person you are willing to practice becoming now.
+Broken Halo Institute exists to challenge the idea that recovery is only about stopping a behavior. Lasting change also means understanding the identity built around survival, addiction, shame, and the stories people learned to believe about themselves.
 
-## Use note
+The work combines lived experience with practical recovery principles to create resources, conversations, and training that are direct, usable, and grounded in dignity without avoiding accountability.
 
-This resource is an educational reflection tool. It is not therapy, crisis care, or a substitute for clinical support.
+Interested in collaboration, speaking, training, or using Broken Halo resources in your organization? [GET IN TOUCH](mailto:ericsanders@thebrokenhaloco.com)
+
+Broken Halo Institute is an educational platform. It does not provide treatment, diagnosis, crisis intervention, or individualized clinical services.
+
+Non-negotiable boundary: This is an educational resource — not a treatment provider, not emergency care, not a source of diagnosis, and not a counselor–client relationship.
